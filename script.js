@@ -24,6 +24,7 @@ listContainer.addEventListener('click', (e) => {
         e.target.parentElement.remove();
         saveData();
     }
+    saveData();
 },false);
 
 const saveData = () => {
