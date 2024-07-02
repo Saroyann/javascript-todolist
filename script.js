@@ -29,3 +29,4 @@ listContainer.addEventListener('click', (e) => {
 const saveData = () => {
     localStorage.setItem('data', listContainer.innerHTML);
 }
+
