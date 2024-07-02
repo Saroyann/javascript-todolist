@@ -93,5 +93,5 @@ ul li.checked {
 }
 
 ul li.checked::before {
-    
+    background-image: url(https://raw.githubusercontent.com/Saroyann/javascript-todolist/master/asset/checked.png);
 }
