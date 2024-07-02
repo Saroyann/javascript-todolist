@@ -80,7 +80,7 @@ ul li::before {
     height: 24px;
     width: 24px;
     border-radius: 50%;
-    background-image: url(/asset/circle.png);
+    background-image: url(https://raw.githubusercontent.com/Saroyann/javascript-todolist/master/asset/circle.png);
     background-size: cover;
     background-position: center;
     top: 12px;
