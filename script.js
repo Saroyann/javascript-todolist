@@ -33,3 +33,7 @@ const saveData = () => {
     localStorage.setItem('data', listContainer.innerHTML);
 }
 
+const showTask = ()=> {
+    listContainer.innerHTML = localStorage.getItem('data');
+}
+
