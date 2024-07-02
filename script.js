@@ -4,6 +4,7 @@ const listContainer = document.getElementById('list-container');
 const addTask = ()=> {
     if(inputBox.value === '') {
         alert('inputan todolist tidak boleh kosong kosong');
+        saveData();
     } else {
         let li = document.createElement('li');
         li.innerHTML = inputBox.value;
