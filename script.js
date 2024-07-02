@@ -30,4 +30,3 @@ const saveData = () => {
     localStorage.setItem('data', listContainer.innerHTML);
 }
 
-//clean and i dont even know and i can know
