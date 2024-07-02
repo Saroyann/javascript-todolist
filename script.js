@@ -1,47 +1,40 @@
 const inputBox = document.getElementById('input-box');
 const listContainer = document.getElementById('list-container');
 
-const addTask = () => {
-    const taskText = inputBox.value.trim();
-    
-    if (taskText === '') {
-        alert('Inputan todolist tidak boleh kosong');
+const addTask = ()=> {
+    if(inputBox.value === '') {
+        alert('inputan todolist tidak boleh kosong kosong');
+        saveData();
     } else {
-        const li = createTaskElement(taskText);
+        let li = document.createElement('li');
+        li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
+        let span = document.createElement('span');
+        span.innerHTML = '\u00d7';
+        li.appendChild(span);
         saveData();
     }
-    
     inputBox.value = '';
     saveData();
 }
 
-const createTaskElement = (taskText) => {
-    const li = document.createElement('li');
-    li.textContent = taskText;
-    
-    const span = document.createElement('span');
-    span.innerHTML = '\u00d7';
-    li.appendChild(span);
-    
-    return li;
-}
+listContainer.addEventListener('click', (e) => {
+    if(e.target.tagName === 'LI') {
+        e.target.classList.toggle('checked');
+        saveData();
+    } else if (e.target.tagName === 'SPAN') {
+        e.target.parentElement.remove();
+        saveData();
+    }
+    saveData();
+},false);
 
 const saveData = () => {
     localStorage.setItem('data', listContainer.innerHTML);
 }
 
-const showTask = () => {
-    listContainer.innerHTML = localStorage.getItem('data') || '';
+const showTask = ()=> {
+    listContainer.innerHTML = localStorage.getItem('data');
 }
+showTask()
 
-listContainer.addEventListener('click', (e) => {
-    if (e.target.tagName === 'LI') {
-        e.target.classList.toggle('checked');
-    } else if (e.target.tagName === 'SPAN') {
-        e.target.parentElement.remove();
-    }
-    saveData();
-}, false);
-
-showTask();
