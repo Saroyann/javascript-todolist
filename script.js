@@ -22,3 +22,7 @@ listContainer.addEventListener('click', (e) => {
         e.target.parentElement.remove();
     }
 },false);
+
+const saveData = () => {
+    localStorage.setItem('data', listContainer.innerHTML);
+}
