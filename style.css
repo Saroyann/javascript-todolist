@@ -114,3 +114,13 @@ ul li span:hover {
     color: white;
 
 }
+
+.footer {
+    color: white;
+    text-align: center;
+    }
+    
+    .footer .socmed a img {
+        width: 40px;
+        margin-top: 10px;
+    }
